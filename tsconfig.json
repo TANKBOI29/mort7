@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"],
+      "@mui/material": ["./node_modules/@mui/joy"]
     }
   },
   "include": [
