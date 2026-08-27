@@ -18,7 +18,7 @@ export default function DesktopView() {
     >
       
 
-      <div></div>
+      <Box></Box>
 
       <Footer />
     </Box>

@@ -1,41 +1,26 @@
-'use client';
-import Head from 'next/head';
-import { useTranslations } from 'next-intl';
-import React from 'react';
-import { isMobile } from 'react-device-detect';
+import { getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
 
-import Page from '@/components/layout/Page';
-import Settings from '@/components/templates/Settings';
-import Umami from '@/components/utils/Umami';
-import useIsSmallScreen from '@/hooks/useIsSmallScreen';
-import DesktopView from '@/views/Desktop';
-import MobileView from '@/views/Mobile';
+import IndexClient from './IndexClient';
 
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
 
+  return {
+    title: 'Mortar Calculator',
+    description: t('description'),
+    keywords: 'Roblox, Mortar, Mortar Calculator, WGRV, USAR, Zans USAR, Zanance',
+    icons: {
+      icon: '/images/logo-256.png'
+    }
+  };
+}
 
-export default function Index() {
-  const t = useTranslations();
-
-  const isSmallScreen = useIsSmallScreen();
-
-  return (
-    <>
-      <Head>
-        <title>MTC Artillery</title>
-        <meta content={t('meta.description')} name="description" />
-        <meta
-          content="Roblox, Artillery, Artillery Calculator, MTC, MTC4, Multicrew Tank Combat, Multicrew Tank Combat 4"
-          name="keywords"
-        />
-      </Head>
-
-      <Page>
-        {isMobile || isSmallScreen ? <MobileView /> : <DesktopView />}
-      </Page>
-
-      <Umami />
-      <Settings />
-    </>
-  );
+export default function Page() {
+  return <IndexClient />;
 }
