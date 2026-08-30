@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import Footer from '@/components/organisms/Footer';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import Divider from '@mui/joy/Divider';
+import Select from '@mui/joy/Select';
 
 export default function DesktopView() {
   
@@ -21,12 +22,14 @@ export default function DesktopView() {
     >
       
 
-      <ScrollBox dependency={listboxOpen}
+      <Select>
+        <ScrollBox dependency={listboxOpen}
       
         
-      >
-        <Divider></Divider>
-      </ScrollBox>
+        >
+          <Divider></Divider>
+        </ScrollBox>
+      </Select>
 
       <Footer />
     </Box>
