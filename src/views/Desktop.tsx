@@ -22,7 +22,11 @@ export default function DesktopView() {
     >
       
 
-      <Select>
+      <Select
+        listboxOpen={listboxOpen}
+        onClose={() => setListboxOpen(false)}
+        onListboxOpenChange={() => setListboxOpen(true)}
+      >
         <ScrollBox dependency={listboxOpen}
       
         
