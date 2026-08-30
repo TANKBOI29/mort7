@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/joy';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/organisms/Footer';
 import ScrollBox from '@/components/molecules/ScrollBox';
-
+import Divider from '@mui/joy/Divider';
 
 export default function DesktopView() {
   
@@ -23,7 +23,10 @@ export default function DesktopView() {
 
       <ScrollBox dependency={listboxOpen}
       
-      ></ScrollBox>
+        
+      >
+        <Divider></Divider>
+      </ScrollBox>
 
       <Footer />
     </Box>
