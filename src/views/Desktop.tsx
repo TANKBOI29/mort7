@@ -9,8 +9,13 @@ import Option from '@mui/joy/Option';
 import Select from '@mui/joy/Select';
 import DataContainer from '@/components/atoms/DataContainer';
 
+import { useDataStore } from '@/stores/data';
+
 export default function DesktopView() {
   
+  const setGun = useDataStore((s) => s.setGun)
+  const getGun = useDataStore((s) => s.getGun)
+
   const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
   return (
     <Box
@@ -30,16 +35,17 @@ export default function DesktopView() {
           listboxOpen={listboxOpen}
           value={'mortar'}
           variant="soft"
+          onChange={(newValue) => newValue!}
           onClose={() => setListboxOpen(false)}
           onListboxOpenChange={() => setListboxOpen(true)}
         >
           <ScrollBox 
             dependency={listboxOpen}
             >
-              <Option key={"mortar"} value={"mortar"}>
+              <Option key={"E2"} value={setGun(5,2)}>
                 <p>Test</p>
               </Option>
-              <Option key={"mortar2"} value={"mortar2"}>
+              <Option key={"D3"} value={setGun(5,2)}>
                 <p>Test2</p>
               </Option>
               <Option key={"mortar3"} value={"mortar3"}>
