@@ -43,19 +43,19 @@ export default function DesktopView() {
             dependency={listboxOpen}
             >
               <Option key={"E2"} value={setGun(5,2)}>
-                <ListItem></ListItem>
+                <Box></Box>
               </Option>
               <Option key={"D3"} value={setGun(5,2)}>
-                <ListItem></ListItem>
+                <Box></Box>
               </Option>
               <Option key={"mortar3"} value={"mortar3"}>
-                <ListItem></ListItem>
+                <Box></Box>
               </Option>
               <Option key={"mortar4"} value={"mortar4"}>
-                <ListItem></ListItem>
+                <Box></Box>
               </Option>
               <Option key={"mortar5"} value={"mortar5"}>
-                <ListItem></ListItem>
+                <Box></Box>
               </Option>
         </ScrollBox>
       </Select>
