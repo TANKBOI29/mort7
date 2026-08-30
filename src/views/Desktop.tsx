@@ -14,7 +14,7 @@ import { useDataStore } from '@/stores/data';
 export default function DesktopView() {
   
   const setGun = useDataStore((s) => s.setGun)
-  const getGun = useDataStore((s) => s.getGun)
+  const Positon = useDataStore((s) => s.getGun)
 
   const gunPositions: Record<string, [number, number]> = {
     "E2": [5,2],
@@ -38,7 +38,7 @@ export default function DesktopView() {
       >
         <Select
           listboxOpen={listboxOpen}
-          value={'mortar'}
+          
           variant="soft"
           onChange={(_, newValue) => {
             if (newValue) {
@@ -46,6 +46,7 @@ export default function DesktopView() {
               setGun(x,y);
             }
           }}
+          value={"E2"}
           onClose={() => setListboxOpen(false)}
           onListboxOpenChange={() => setListboxOpen(true)}
         >
