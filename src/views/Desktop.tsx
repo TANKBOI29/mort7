@@ -34,7 +34,7 @@ export default function DesktopView() {
       
         
           >
-          <Divider></Divider>
+            
         </ScrollBox>
       </Select>
       </DataContainer>
