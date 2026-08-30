@@ -24,6 +24,8 @@ export default function DesktopView() {
 
       <Select
         listboxOpen={listboxOpen}
+        value={'mortar'}
+        variant="soft"
         onClose={() => setListboxOpen(false)}
         onListboxOpenChange={() => setListboxOpen(true)}
       >
