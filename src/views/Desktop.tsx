@@ -39,16 +39,16 @@ export default function DesktopView() {
               <Option key={"mortar"} value={"mortar"}>
                 <p>Test</p>
               </Option>
-              <Option key={"mortar"} value={"mortar"}>
+              <Option key={"mortar2"} value={"mortar2"}>
                 <p>Test2</p>
               </Option>
-              <Option key={"mortar"} value={"mortar"}>
+              <Option key={"mortar3"} value={"mortar3"}>
                 <p>Test3</p>
               </Option>
-              <Option key={"mortar"} value={"mortar"}>
+              <Option key={"mortar4"} value={"mortar4"}>
                 <p>Test4</p>
               </Option>
-              <Option key={"mortar"} value={"mortar"}>
+              <Option key={"mortar5"} value={"mortar5"}>
                 <p>Test5</p>
               </Option>
         </ScrollBox>
