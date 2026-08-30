@@ -6,6 +6,7 @@ import Footer from '@/components/organisms/Footer';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import Divider from '@mui/joy/Divider';
 import Select from '@mui/joy/Select';
+import DataContainer from '@/components/atoms/DataContainer';
 
 export default function DesktopView() {
   
@@ -21,21 +22,23 @@ export default function DesktopView() {
       zIndex={1}
     >
       
-
-      <Select
-        listboxOpen={listboxOpen}
-        value={'mortar'}
-        variant="soft"
-        onClose={() => setListboxOpen(false)}
-        onListboxOpenChange={() => setListboxOpen(true)}
-      >
-        <ScrollBox dependency={listboxOpen}
+      <DataContainer>
+        <Select
+          listboxOpen={listboxOpen}
+          value={'mortar'}
+          variant="soft"
+          onClose={() => setListboxOpen(false)}
+          onListboxOpenChange={() => setListboxOpen(true)}
+        >
+          <ScrollBox dependency={listboxOpen}
       
         
-        >
+          >
           <Divider></Divider>
         </ScrollBox>
       </Select>
+      </DataContainer>
+      
 
       <Footer />
     </Box>
