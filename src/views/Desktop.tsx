@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Box, Typography } from '@mui/joy';
+import { Box, ListItem, Typography } from '@mui/joy';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/organisms/Footer';
 import ScrollBox from '@/components/molecules/ScrollBox';
@@ -43,19 +43,19 @@ export default function DesktopView() {
             dependency={listboxOpen}
             >
               <Option key={"E2"} value={setGun(5,2)}>
-                <p>Test</p>
+                <ListItem></ListItem>
               </Option>
               <Option key={"D3"} value={setGun(5,2)}>
-                <p>Test2</p>
+                <ListItem></ListItem>
               </Option>
               <Option key={"mortar3"} value={"mortar3"}>
-                <p>Test3</p>
+                <ListItem></ListItem>
               </Option>
               <Option key={"mortar4"} value={"mortar4"}>
-                <p>Test4</p>
+                <ListItem></ListItem>
               </Option>
               <Option key={"mortar5"} value={"mortar5"}>
-                <p>Test5</p>
+                <ListItem></ListItem>
               </Option>
         </ScrollBox>
       </Select>
