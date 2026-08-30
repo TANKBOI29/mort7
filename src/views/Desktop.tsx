@@ -16,6 +16,11 @@ export default function DesktopView() {
   const setGun = useDataStore((s) => s.setGun)
   const getGun = useDataStore((s) => s.getGun)
 
+  const gunPositions: Record<string, [number, number]> = {
+    "E2": [5,2],
+    "D3": [1, 2]
+};
+
   const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
   return (
     <Box
@@ -35,26 +40,22 @@ export default function DesktopView() {
           listboxOpen={listboxOpen}
           value={'mortar'}
           variant="soft"
-          onChange={(newValue) => newValue!}
+          onChange={(_, newValue) => {
+            if (newValue) {
+              const [x,y] = gunPositions[newValue];
+              setGun(x,y);
+            }
+          }}
           onClose={() => setListboxOpen(false)}
           onListboxOpenChange={() => setListboxOpen(true)}
         >
           <ScrollBox 
             dependency={listboxOpen}
             >
-              <Option key={"E2"} value={setGun(5,2)}>
+              <Option key={"E2"} value={"E2"}>
                 <Box></Box>
               </Option>
-              <Option key={"D3"} value={setGun(5,2)}>
-                <Box></Box>
-              </Option>
-              <Option key={"mortar3"} value={"mortar3"}>
-                <Box></Box>
-              </Option>
-              <Option key={"mortar4"} value={"mortar4"}>
-                <Box></Box>
-              </Option>
-              <Option key={"mortar5"} value={"mortar5"}>
+              <Option key={"D3"} value={"D3"}>
                 <Box></Box>
               </Option>
         </ScrollBox>
