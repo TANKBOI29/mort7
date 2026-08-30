@@ -10,6 +10,7 @@ import Select from '@mui/joy/Select';
 import DataContainer from '@/components/atoms/DataContainer';
 
 import { useDataStore } from '@/stores/data';
+import { useShallow } from 'zustand/react/shallow'
 import type { Vector } from '@/components/templates/Canvas';
 
 export default function DesktopView() {
@@ -27,7 +28,7 @@ export default function DesktopView() {
     return entry ? entry[0] : null;
   }
   const setGun = useDataStore((s) => s.setGun)
-  const positon = useDataStore((s) => s.getGun())
+  const positon = useDataStore(useShallow((s) => s.getGun()))
   const selectedKey = getKeyFromPosition(positon, gunPositions);
 
   const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
