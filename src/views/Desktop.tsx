@@ -1,11 +1,14 @@
 'use client';
-import { Box, Typography } from '@mui/joy'
+import React from 'react';
+import { Box, Typography } from '@mui/joy';
 import { useTranslations } from 'next-intl';
 import Footer from '@/components/organisms/Footer';
+import ScrollBox from '@/components/molecules/ScrollBox';
+
 
 export default function DesktopView() {
   
-
+  const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
   return (
     <Box
       className="desktop"
@@ -18,7 +21,9 @@ export default function DesktopView() {
     >
       
 
-      <Box></Box>
+      <ScrollBox dependency={listboxOpen}
+      
+      ></ScrollBox>
 
       <Footer />
     </Box>

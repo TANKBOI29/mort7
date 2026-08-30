@@ -13,7 +13,7 @@ export const theme = extendTheme({});
 // Implementation from emotion-js: https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
 export default function Theme({ children }: PropsWithChildren) {
   const [{ cache, flush }] = React.useState(() => {
-    const cache = createCache({ key: 'mtc' });
+    const cache = createCache({ key: 'usar-tools' });
     cache.compat = true;
     const prevInsert = cache.insert;
     let inserted: string[] = [];
